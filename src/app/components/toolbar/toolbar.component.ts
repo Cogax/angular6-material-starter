@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, HostListener } from '@angular/core';
 import { SidenavService } from '../sidenav/sidenav.service';
 
 @Component({
@@ -7,11 +7,26 @@ import { SidenavService } from '../sidenav/sidenav.service';
   styleUrls: ['./toolbar.component.scss']
 })
 export class ToolbarComponent implements OnInit {
+  isMenuIcon: boolean = true;
+  @HostListener('window:resize') onResize() {
+    this.onResizeDisplay();
+  }
+
   constructor(
     public sidenavService: SidenavService
-  ) { }
+  ) {
+    this.onResizeDisplay();
+  }
 
   ngOnInit() {
+  }
+
+  onResizeDisplay() {
+    if (window.innerWidth > 800) {
+      this.isMenuIcon = false;
+    } else {
+      this.isMenuIcon = true;
+    }
   }
 
 }

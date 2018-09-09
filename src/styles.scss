@@ -1,12 +1,16 @@
 /* You can add global styles to this file, and also import other style files */
-
 @import '~bootstrap/scss/bootstrap-reboot';
 @import '~bootstrap/scss/bootstrap-grid';
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
 // @import "https://fonts.googleapis.com/icon?family=Material+Icons";
 body {
   font-family: Roboto, sans-serif;
   margin: 0px;
+}
+
+.container {
+  background-color: rgba(241, 241, 241, 0.59);
 }
 
 [padding] {
@@ -30,6 +34,7 @@ body {
 }
 
 * {
+
   &:active,
   :focus {
     outline: none !important;
